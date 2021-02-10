@@ -9,6 +9,12 @@ Route::get('home', function() {
 
 Route::name('admin.')->prefix('admin')->middleware('auth')->group(function() {
     Route::get('dashboard', 'DashboardController')->name('dashboard');
+    Route::get('transaction', 'TransactionController@index')->name('transaction');
+    Route::get('transaction-list', 'TransactionController@transactionList')->name('transaction-list');
+    Route::get('transaction-store', 'TransactionController@transactionStore')->name('transaction-Store');
+    Route::get('transaction-details', 'TransactionController@transactionDetails')->name('transaction-Details');
+    Route::get('transaction-delete', 'TransactionController@transactionDelete')->name('transaction-Delete');
+    Route::get('transaction-update', 'TransactionController@transactionUpdate')->name('transaction-Update');
 
     Route::get('users/roles', 'UserController@roles')->name('users.roles');
     Route::resource('users', 'UserController', [

@@ -12,5 +12,6 @@
       <li class="menu-header">Users</li>
       <li class="{{ Request::route()->getName() == 'admin.users' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
       @endif
+      <li class="{{ Request::route()->getName() == 'admin.transaction' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.transaction') }}"><i class="fa fa-book"></i> <span>Transaction</span></a></li>
     </ul>
 </aside>
